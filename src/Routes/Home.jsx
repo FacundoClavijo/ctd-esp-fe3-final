@@ -15,7 +15,6 @@ const Home = () => {
     .then((res) => setCards(res.data));
   }, []);
 
-
   return (
     <main className="">
       <h1>Home</h1>
@@ -23,7 +22,7 @@ const Home = () => {
         <ul>
           {cards.map((item) => (
               <li key={item.id}>
-                <Card name={item.name} username={item.username} id={item.id}/>
+                <Card name={item.name} username={item.username} id={item.id} item={item}/>
               </li>
             ))}
         </ul>
