@@ -1,19 +1,20 @@
 import React from "react";
 import Card from "../Components/Card";
+import { useGlobalContext } from "../Components/utils/global.context";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Favs = () => {
-
+  const {dentistsStates} = useGlobalContext();
   return (
     <>
       <h1>Dentists Favs</h1>
       <div className="card-grid">
 
       
-      {localStorage.getItem('favs') && JSON.parse(localStorage.getItem('favs')).length > 0 ? (
+      {dentistsStates.favs && dentistsStates.favs.length > 0 ? (
         <ul>
-          {JSON.parse(localStorage.getItem('favs')).map((item) => (
+          {dentistsStates.favs.map((item) => (
             <li key={item.id}>
               <Card name={item.name} username={item.username} id={item.id} item={item}/>
             </li>
