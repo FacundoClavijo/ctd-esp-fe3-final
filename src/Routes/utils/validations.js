@@ -12,5 +12,6 @@ export const validations = {
             const spacesRegex = /\s/;
             return spacesRegex.test(input) ? true : false;
         }
+
         return (name.trim().length > 5 && !validSpaces(name)) ? true : false;}
 }

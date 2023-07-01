@@ -9,17 +9,19 @@ import { useGlobalContext } from './utils/global.context'
 
 const Navbar = () => {
 
-  const {dentistsStates, dentistsDispatch} = useGlobalContext()
-  
+  const { dentistsDispatch} = useGlobalContext()
+
   const changeTheme = () => {
       dentistsDispatch({type: 'CHANGE_THEME', payload: "dark"})
   }
 
   return (
-    <nav >
-      <ul className="navbar-nav mb-2 mb-sm-0">
-        <li className={`nav-item`}>
-          <Link className="nav-link" to={routes.home}>
+    <nav className='nav-bar'>
+      <section>
+        <img src="/images/DH.png" alt="" />
+      </section>
+      <section>
+      <Link className="nav-link" to={routes.home}>
             Home
           </Link>
           <Link className="nav-link" to={routes.contact}>
@@ -28,11 +30,9 @@ const Navbar = () => {
           <Link className="nav-link" to={routes.favs}>
             Favs
           </Link>
-        </li>
-      </ul>
-      {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
-      {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      <button onClick={changeTheme}>Change theme</button>
+      <button className="theme-button" onClick={changeTheme}>Change theme</button>
+      </section>
+          
     </nav>
   )
 }

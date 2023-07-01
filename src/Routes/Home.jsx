@@ -8,16 +8,14 @@ const Home = () => {
   const {dentistsStates} = useGlobalContext();
 
   return (
-    <main className="">
+    <main className="main">
       <h1>Home</h1>
       <div className="card-grid">
-        <ul>
           {dentistsStates.data.map((item) => (
-              <li key={item.id}>
+              <article key={item.id}>
                 <Card item={item}/>
-              </li>
+              </article>
             ))}
-        </ul>
       </div>
     </main>
   );
